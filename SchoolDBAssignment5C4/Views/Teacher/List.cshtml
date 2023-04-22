@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SchoolDBAssignment4C2.Models.Teacher>
+@{
+    ViewBag.Title = "List";
+}
+
+<nav>
+    <a class="navlink" href="/Teacher/New">New Teacher</a>
+</nav>
+<h2>List</h2>
+<form action="/Teacher/List" method="GET">
+    <input type="text" name="SearchKey" autocomplete="off" />
+    <input type="submit" value="Search" />
+</form>
+<table>
+    <tr>
+        <td>Teacher ID</td>
+        <td>First name</td>
+        <td>Last name</td>
+        <td>Employee Number</td>
+        <td>Hire Date</td>
+        <td>Salary</td>
+    </tr>
+
+    @foreach (var teacher in Model)
+    {
+        <tr>
+            <td>
+                <a href="/Teacher/Show/@teacher.Id">@teacher.Id</a>
+            </td>
+            <td>
+                <a href="/Teacher/Show/@teacher.Id">@teacher.TeacherFirstName</a>
+            </td>
+            <td>
+                <a href="/Teacher/Show/@teacher.Id">@teacher.TeacherLastName</a>
+            </td>
+            <td>
+                <a href="/Teacher/Show/@teacher.Id">@teacher.EmployeeNumber</a>
+            </td>
+            <td>
+                <a href="/Teacher/Show/@teacher.Id">@teacher.HireDate</a>
+            </td>
+            <td>
+                <a href="/Teacher/Show/@teacher.Id">@teacher.Salary</a>
+            </td>
+        </tr>
+
+        <br />
+        ;
+    }
+</table>

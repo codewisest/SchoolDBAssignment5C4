@@ -1,0 +1,40 @@
+﻿@model SchoolDBAssignment4C2.Models.Teacher
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show</h2>
+<a class="navlink" href="/Teacher/List">List of teachers</a>
+<a class="dellink" href="/Teacher/ConfirmDelete/@Model.Id">Delete teacher</a>
+<table>
+    <tr>
+        <td>Teacher ID</td>
+        <td>Full name</td>
+        <td>Employee Number</td>
+        <td>Hire Date</td>
+        <td>Salary</td>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Model.Id
+        </td>
+        <td>
+            @Model.TeacherFirstName
+        </td>
+        <td>
+            @Model.TeacherLastName
+        </td>
+        <td>
+            @Model.EmployeeNumber
+        </td>
+        <td>
+            @Model.HireDate
+        </td>
+        <td>
+            @Model.Salary
+        </td>
+    </tr>
+
+</table>
